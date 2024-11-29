@@ -13,4 +13,4 @@ const medicalRacordSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
-const MedicalRecord = mongoose.model("MedicalRecord" , medicalRacordSchema)
+export const MedicalRecord = mongoose.model("MedicalRecord" , medicalRacordSchema)

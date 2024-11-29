@@ -26,4 +26,4 @@ const hospitalSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
-const Hospital = mongoose.model("Hospital" , hospitalSchema)
+export const Hospital = mongoose.model("Hospital", hospitalSchema);
