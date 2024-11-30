@@ -4,9 +4,6 @@ import 'dotenv/config'
 
 import connectDb from "./db/index.js";
 
-connectDb();
-    
-
 /*
 import express from "express";
 const app = express();
@@ -28,6 +25,19 @@ const app = express();
         throw error;
     }
 })();
-
-
 */
+
+connectDb()
+    .then(() => {
+        const port = process.env.PORT || 8000;
+        app.on("error", (error) => {
+            console.log("express error : " , error);
+            throw error
+        })
+        app.listen(port, () => {
+            console.log("app is listening at port : ", port);
+        })
+    })
+    .catch(() => {
+        console.log("Mongodb connection failed");
+    })
