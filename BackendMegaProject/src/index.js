@@ -39,5 +39,6 @@ connectDb()
         })
     })
     .catch(() => {
-        console.log("Mongodb connection failed");
+        console.log("Mongodb connection failed : !!!!");
+        // this won't log as process has already exited using process.exit(1) in db file
     })
